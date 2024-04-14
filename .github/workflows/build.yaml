@@ -1,0 +1,28 @@
+name: Build
+on: 
+  pull_request:
+    branches:
+      - main
+      - master
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout: 60
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: Install dependencies
+        run: npm install
+      - name: Build Ionic
+        run: npm run build
+      - name: lint Ionic 
+        run: npm run lint
+      - name: Test Ionic
+        run: npm run test
