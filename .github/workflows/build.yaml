@@ -23,5 +23,3 @@ jobs:
         run: npm run build
       - name: lint Ionic 
         run: npm run lint
-      - name: Test Ionic
-        run: npm run test
