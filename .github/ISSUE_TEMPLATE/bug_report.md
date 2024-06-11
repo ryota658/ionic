@@ -3,7 +3,7 @@ name: 🐞 Bug
 about: File a bug/issue
 title: '[BUG] <title>'
 labels: bug,
-projects: sample project
+projects: sampleProject
 
 ---
 
